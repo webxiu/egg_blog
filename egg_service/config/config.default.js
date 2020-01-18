@@ -31,11 +31,28 @@ module.exports = appInfo => {
       port: '3306',
       user: 'root',
       password: '123654',
-      database: 'article',    
+      database: 'article',
     },
     app: true,
     agent: false,
   };
+
+  // 配置安全
+  config.security = {
+    csrf: {
+      enable: false
+    },
+    domainWhiteList: ['*']
+  };
+  // 配置跨域
+  config.cors = {
+    // origin: 'http://localhost:3000', //只允许这个域进行访问接口
+    origin: '*',
+    credentials: true,   // 开启认证
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
+  };
+
+
   return {
     ...config,
     ...userConfig,

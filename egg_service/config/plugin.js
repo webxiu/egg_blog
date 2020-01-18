@@ -14,3 +14,10 @@ exports.mysql = {
   // static: {
   // }
 };
+
+exports.cors = {
+  enable: true,
+  package: 'egg-cors'
+  // static: {
+  // }
+};
